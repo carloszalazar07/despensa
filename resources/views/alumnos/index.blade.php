@@ -4,16 +4,8 @@
 	
 	<h1 class="text-center">Lista de Alumnos</h1>
 	<a href="{{url('/alumnos/create')}}" class="btn btn-primary fas fa-user-plus"></a>
-	<hr>
-	{{-- BUSCADOR --}}
-	{!!Form::open(['route'=>'alumnos.index', 'method'=> 'GET', 'class'=>'navbar-form pull-right']) !!}
-		<div class="form-group">
-			<span class="input-group-addon" id="seach"></span>
-			{!!Form::text('nombre', null, ['class'=>'form-control', 'placeholder'=>'Busca el alumno', 'aria-describedby' => 'search']) !!}
-		</div>
-	{!!Form::close() !!}
-	{{-- FIN DEL BUSCADOR --}}
-	
+	<br>
+	<br>
 	<table class="table table-hover">
 		<thead>
 			<tr>
