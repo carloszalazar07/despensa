@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::view('/','main');
+Route::view('/index','index');
+Route::resource('alumnos','AlumnosController');
+Route::resource('cursos','CursosController');
