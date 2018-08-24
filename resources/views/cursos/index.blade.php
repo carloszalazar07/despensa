@@ -1,7 +1,8 @@
 @extends('main')
 
 @section('contenido')
-
+	
+	<h1 class="text-center">Todos Los Cursos Disponibles</h1>
 	<a href="{{url('/cursos/create')}}" class="btn btn-primary">Agregar Curso</a>
 	<table class="table">
 		<thead>
@@ -25,7 +26,7 @@
 				</td>
 				<td>
 					{!!Form::open(['route'=>['cursos.destroy',$curso->id],'method'=>'DELETE'])!!}
-						<button class="fas fa-trash-alt btn btn-danger"></button>
+						<button class=" btn btn-danger">Borrar</button>
 					{!!Form::close()!!}
 				</td>
 			</tr>

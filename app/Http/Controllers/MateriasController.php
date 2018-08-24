@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Materia;
 
 class MateriasController extends Controller
 {
@@ -13,7 +14,8 @@ class MateriasController extends Controller
      */
     public function index()
     {
-        //
+        $materias = Materia::all();
+        return view('materias.index', compact('materias'));
     }
 
     /**
@@ -23,7 +25,7 @@ class MateriasController extends Controller
      */
     public function create()
     {
-        //
+        return view('materias.create');
     }
 
     /**
@@ -34,7 +36,11 @@ class MateriasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $materia = new Materia;
+        $materia->nombre = $request->nombre;
+
+        $materia->save();
+        return redirect('/materias');
     }
 
     /**
@@ -45,7 +51,8 @@ class MateriasController extends Controller
      */
     public function show($id)
     {
-        //
+        $materia = Materia::find($id);
+        return view('materias.show', compact('materia'));
     }
 
     /**
@@ -56,7 +63,8 @@ class MateriasController extends Controller
      */
     public function edit($id)
     {
-        //
+        $materia = Materia::find($id);
+        return view('materias.edit', compact('materia'));
     }
 
     /**
@@ -68,7 +76,11 @@ class MateriasController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $materia = Materia::find($id);
+        $materia->nombre = $request->nombre;
+
+        $materia->save();
+        return redirect('/materias');
     }
 
     /**
@@ -79,6 +91,7 @@ class MateriasController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $materia = Materia::find($id)->delete();
+        return redirect('/materias');
     }
 }
