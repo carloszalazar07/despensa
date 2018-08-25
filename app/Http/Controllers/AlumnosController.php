@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Alumno;
+use App\Matricula;
 
 class AlumnosController extends Controller
 {
@@ -25,7 +26,8 @@ class AlumnosController extends Controller
      */
     public function create()
     {
-        return view('alumnos.create');
+        $matriculas = Matricula::all();
+        return view('alumnos.create',compact('matriculas'));
     }
 
     /**
@@ -40,6 +42,7 @@ class AlumnosController extends Controller
         $alumno->nombre = $request->nombre;
         $alumno->edad = $request->edad;
         $alumno->telefono = $request->telefono;
+        $alumno->matricula_id = $request->matricula_id;
 
         $alumno->save();
         return redirect('/alumnos');

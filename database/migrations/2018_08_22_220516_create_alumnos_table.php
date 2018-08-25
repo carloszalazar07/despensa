@@ -13,22 +13,15 @@ class CreateAlumnosTable extends Migration
      */
     public function up()
     {
-        Schema::create('relacionA', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('categoria');
-            $table->timestamps();
-        });
+        
 
         Schema::create('alumnos', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nombre');
             $table->string('edad');
             $table->string('telefono');
-            $table->unsignedInteger('relacionA_id');
 
             $table->timestamps();
-
-            $table->foreign('relacionA_id')->references('id')->on('categorias');
         });
     }
 
