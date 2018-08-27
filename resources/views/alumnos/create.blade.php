@@ -22,9 +22,9 @@
 		{{Form::text('telefono','',(['class'=>'form-control','placeholder'=>'Ingrese su Telefono',''])) }}
 	</div>
 
-	<select name="matricula_id" id="" class="form-control">
-			@foreach($matriculas as $matricula)
-			<option value="{{$matricula->id}}">{{$matricula->curso}}</option>
+	<select name="curso_id" id="" class="form-control">
+			@foreach($cursos as $curso)
+			<option value="{{$curso->id}}">{{$curso->nombre}}</option>
 			@endforeach
 	</select>
 

@@ -6,9 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class curso extends Model
 {
-    protected $fillable = ['matricula_id','nombre'];
+    protected $fillable = ['nombre'];
 
-    public function matricula(){
-    	return $this->belongsTo('App\Matricula');
+    public function alumnos(){
+    	return $this->belongsToMany('App\alumno');
+    }
+
+    public function materias(){
+    	return $this->belongsToMany('App\materia');
     }
 }
