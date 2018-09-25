@@ -1,70 +1,63 @@
-        <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
-          <div class="main-navbar">
-            <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
-              <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
-                <div class="d-table m-auto">
-                  <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/shards-dashboards-logo.svg" alt="Shards Dashboard">
-                  <span class="d-none d-md-inline ml-1">CarlosZalazar</span>
-                </div>
-              </a>
-              <a class="toggle-sidebar d-sm-inline d-md-none d-lg-none">
-                <i class="material-icons">&#xE5C4;</i>
-              </a>
-            </nav>
-          </div>
-          <form action="#" class="main-sidebar__search w-100 border-right d-sm-flex d-md-none d-lg-none">
-            <div class="input-group input-group-seamless ml-3">
-              <div class="input-group-prepend">
-                <div class="input-group-text">
-                  <i class="fas fa-search"></i>
-                </div>
-              </div>
-              <input class="navbar-search form-control" type="text" placeholder="Search for something..." aria-label="Search"> </div>
-          </form>
-          <div class="nav-wrapper">
-            <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="index.html">
-                  <i class="material-icons">portrait</i>
-                  <span>Alumnos</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="components-blog-posts.html">
-                  <i class="material-icons">folder_shared</i>
-                  <span>Cursos</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="add-new-post.html">
-                  <i class="material-icons">note_add</i>
-                  <span>Materias</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="form-components.html">
-                  <i class="material-icons">edit</i>
-                  <span>Principal</span>
-                </a>
-              </li>
-              {{-- <li class="nav-item">
-                <a class="nav-link " href="tables.html">
-                  <i class="material-icons">table_chart</i>
-                  <span>Reportes</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="user-profile-lite.html">
-                  <i class="material-icons">person</i>
-                  <span>User Profile</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " href="errors.html">
-                  <i class="material-icons">error</i>
-                  <span>Errors</span>
-                </a>
-              </li> --}}
-            </ul>
-          </div>
-        </aside>
+<div class="sidebar" data-color="blue">
+      
+      <div class="sidebar-wrapper "  >
+        <div class="logo">
+          <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+            CT
+          </a>
+          <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+            Creativas
+          </a>
+        </div>
+        <ul class="nav ">
+          <li class=" ">
+            <a href="{{route('categorias.index')}}">
+              <i class="far fa-list-alt"></i>
+              <p>Categoria</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{route('productos.index')}}">
+              <i class="fas fa-cart-plus"></i>
+              <p>Productos</p>
+            </a>
+          </li>
+          <li>
+            <a href="{{route('vendedores.index')}}">
+              <i class="fas fa-user"></i>
+              <p>Vendedores</p>
+            </a>
+          </li>
+          {{-- <li>
+            <a href="./notifications.html">
+              <i class="tim-icons icon-bell-55"></i>
+              <p>Notifications</p>
+            </a>
+          </li>
+          <li>
+            <a href="./user.html">
+              <i class="tim-icons icon-single-02"></i>
+              <p>User Profile</p>
+            </a>
+          </li>
+          <li>
+            <a href="./tables.html">
+              <i class="tim-icons icon-puzzle-10"></i>
+              <p>Table List</p>
+            </a>
+          </li>
+          <li>
+            <a href="./typography.html">
+              <i class="tim-icons icon-align-center"></i>
+              <p>Typography</p>
+            </a>
+          </li>
+          <li>
+            <a href="./rtl.html">
+              <i class="tim-icons icon-world"></i>
+              <p>RTL Support</p>
+            </a>
+          </li> --}}
+        </ul>
+      </div>
+    </div>
