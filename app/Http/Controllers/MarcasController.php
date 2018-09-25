@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Vendedore;
 use App\Marca;
+use App\Vendedore;
 
-class VendedoresController extends Controller
+class MarcasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class VendedoresController extends Controller
      */
     public function index()
     {
-        $vendedores = Vendedore::orderBy('created_at','asc')->paginate(5);
-        return view('vendedores.index',compact('vendedores'));
+        $marcas = Marca::all();
+        return view('marcas.index',compact('marcas')); 
     }
 
     /**
@@ -26,8 +26,8 @@ class VendedoresController extends Controller
      */
     public function create()
     {
-        $vendedore = Vendedore::all();
-        return view('vendedores.create',compact('vendedore'));
+        $vendedores = Vendedore::all();
+        return view('marcas.create',compact('vendedores'));
     }
 
     /**
@@ -38,11 +38,12 @@ class VendedoresController extends Controller
      */
     public function store(Request $request)
     {
-        $vendedore = new Vendedore;
-        $vendedore->nombre = $request->nombre;
-        $vendedore->dia = $request->dia;
-        $vendedore->save();
-        return redirect('/vendedores'); 
+        $marca = new Marca;
+        $marca->nombre = $request->nombre;
+        $marca->vendedor_id = $request->vendedor_id;
+        $marca->save();
+
+        return redirect('/marcas');
     }
 
     /**
@@ -64,8 +65,8 @@ class VendedoresController extends Controller
      */
     public function edit($id)
     {
-        $vendedore = Vendedore::find($id);
-        return view('vendedores.edit',compact('vendedore'));
+        $marca = Marca::find($id);
+        return view('marcas.edit',compact('marca'));
     }
 
     /**
@@ -77,12 +78,13 @@ class VendedoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $vendedore = Vendedore::find($id);
-        $vendedore->nombre = $request->nombre;
-        $vendedore->dia = $request->dia;
-        $vendedore->save();
+        $marca = Marca::find($id);
+        $marca->nombre = $request->nombre;
+        $marca->vendedor_id = $request->vendedor_id;
+        $marca->save();
 
-        return redirect('/vendedores');
+        return redirect('/marcas');
+
     }
 
     /**
@@ -93,7 +95,7 @@ class VendedoresController extends Controller
      */
     public function destroy($id)
     {
-        $vendedore = Vendedore::find($id)->delete();
-        return redirect('/vendedores');
+        $marca = Marca::find($id)->delete();
+        return redirect('/marcas');
     }
 }

@@ -18,13 +18,13 @@
             <table class="table tablesorter " id="">
               <thead class=" text-primary">
                 <tr>
-                  <th>Nombre</th>
+                  <th>Producto</th>
                   <th>Marca</th>
                   <th>Precio Publico</th>
                   <th>Precio Costo</th>
                   <th>Categoria</th>
-                  <th class="text-center">Acciones</th>
-                  <th class="text-center">Eliminar</th>
+                  <th class="text-center text-info">Acciones</th>
+                  <th class="text-center text-danger">Eliminar</th>
                 </tr>
               </thead>
               <tbody>

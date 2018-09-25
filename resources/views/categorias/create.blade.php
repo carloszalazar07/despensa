@@ -2,21 +2,29 @@
 
 @section('contenido')
 
-  {!!Form::open(['action'=> 'CategoriasController@store',
-                'method'=> 'POST']) !!}
-
-  <div class="col-md-12">
-  	<div class="form-group">
-  	  {{Form::label('nombre','Nombre')}}
-  	  {{Form::text('nombre','',(['class'=>'text-center form-control','placeholder'=>'Ingrese su Nombre','data-color'=>'blue']))}}
-  	</div>
-  </div>
-
-  {{Form::submit('Guardar',(['class'=>'btn btn-primary'])) }}
-  <a href="{{url('/categorias')}}" class="btn btn-warning">Volver</a>
-
-  {!!Form::close()!!}
-
-
+  <div class="card">
+    <div class="card-header">
+                  <h5 class="title">Agregar Nueva Categoria</h5>
+                </div>
+    
+      {!!Form::open(['action'=> 'CategoriasController@store',
+                  'method'=> 'POST']) !!}
+    
+    <div class="col-md-12">
+      <div class="form-group">
+        {{Form::label('nombre','Nombre')}}
+        {{Form::text('nombre','',(['class'=>'form-control','placeholder'=>'Ingrese su Nombre']))}}
+      </div>
+    </div>
+    
+    <div class="text-center">
+      <div class="col-md-12">
+        {{-- {{Form::submit('Guardar',(['class'=>'btn btn-info'])) }} --}}
+        <button type="submit" class="btn btn-info fas fa-check"></button>
+        <a href="{{url('/categorias')}}" class="btn btn-success fas fa-undo-alt"></a>
+      </div>
+    </div>
+    
+    {!!Form::close()!!}</div>
 
 @endsection

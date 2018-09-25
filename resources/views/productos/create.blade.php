@@ -59,8 +59,9 @@
     
     <div class="text-center">
       <div class="col-md-12">
-        {{Form::submit('Guardar',(['class'=>'btn btn-info'])) }}
-        <a href="{{url('/productos')}}" class="btn btn-success">Volver</a>
+        {{-- {{Form::submit('Guardar',(['class'=>'btn btn-info'])) }} --}}
+        <button type="submit" class="btn btn-info fas fa-check"></button>
+        <a href="{{url('/productos')}}" class="btn btn-success fas fa-undo-alt"></a>
       </div>
     </div>
     

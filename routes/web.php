@@ -20,6 +20,7 @@ Route::view('/index','index');
 Route::resource('categorias','CategoriasController');
 Route::resource('productos','ProductosController');
 Route::resource('vendedores','VendedoresController');
+Route::resource('marcas','MarcasController');
 
 Auth::routes();
 

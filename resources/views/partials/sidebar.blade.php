@@ -28,13 +28,13 @@
               <p>Vendedores</p>
             </a>
           </li>
-          {{-- <li>
-            <a href="./notifications.html">
-              <i class="tim-icons icon-bell-55"></i>
-              <p>Notifications</p>
+          <li>
+            <a href="{{route('marcas.index')}}">
+              <i class="far fa-bookmark"></i>
+              <p>Marcas</p>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="./user.html">
               <i class="tim-icons icon-single-02"></i>
               <p>User Profile</p>

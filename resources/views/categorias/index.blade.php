@@ -8,7 +8,7 @@
           <div class="row">
             <div class="col-sm-6 text-left">
               <h5 class="card-category">Pagína de Categorias</h5>
-              <h2 class="card-title">Bienvenido</h2><a href="{{url('categorias/create')}}" class="btn btn-info">Crear</a>
+              <h2 class="card-title">Bienvenido</h2><a href="{{url('categorias/create')}}" class="btn btn-info fas fa-plus-circle"></a>
               
             </div>
             
@@ -20,8 +20,8 @@
               <thead class=" text-primary">
                 <tr>
                   <th>Nombre</th>
-                  <th class="text-center">Acciones</th>
-                  <th class="text-center">Eliminar</th>
+                  <th class="text-center text-info">Acciones</th>
+                  <th class="text-center text-danger">Eliminar</th>
                 </tr>
               </thead>
               <tbody>
@@ -29,11 +29,11 @@
                 <tr>
                   <td>{{$categoria->nombre}}</td>
                   <td class="text-center">
-                    <a href="{{route('categorias.edit',$categoria->id)}}" class="btn btn-info">Editar</a>
+                    <a href="{{route('categorias.edit',$categoria->id)}}" class="btn btn-info fas fa-edit"></a>
                   </td>
                   <td class="text-center">
                     {!!Form::open(['route'=>['categorias.destroy',$categoria->id],'method'=>'DELETE'])!!}
-                        <button class="btn btn-danger">Eliminar</button>
+                        <button class="btn btn-danger fas fa-trash-alt"></button>
                       {!!Form::close()!!}
                   </td>
                 </tr>
