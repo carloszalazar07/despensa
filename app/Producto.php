@@ -15,4 +15,10 @@ class Producto extends Model
     public function marca(){
     	return $this->belongsTo('App\Marca');
     }
+
+    public function scopeNombre($query, $nombre){
+    	if ($nombre) {
+    		return $query->where('nombre','LIKE', "%".$nombre."%");
+    	}
+    }
 }

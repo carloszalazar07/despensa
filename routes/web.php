@@ -21,6 +21,16 @@ Route::resource('categorias','CategoriasController');
 Route::resource('productos','ProductosController');
 Route::resource('vendedores','VendedoresController');
 Route::resource('marcas','MarcasController');
+Route::resource('facturas', 'FacturasController');
+
+Route::post('buscar','ProductosController@buscar')->name('productos.buscar');
+Route::get('/mostrar','ProductosController@suma')->name('productos.suma');
+
+
+// Route::get('/','SearchController@index');
+ 
+// Route::get('/search','SearchController@search');
+
 
 Auth::routes();
 

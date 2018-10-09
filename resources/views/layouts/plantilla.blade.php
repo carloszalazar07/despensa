@@ -1,76 +1,127 @@
-<!doctype html>
-<html class="no-js h-100" lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Shards Dashboard Lite - Free Bootstrap Admin Template – DesignRevision</title>
-    <meta name="description" content="A high-quality &amp; free Bootstrap admin dashboard template pack that comes with lots of templates and components.">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!DOCTYPE html>
+<html lang="en">
 
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Diseño
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <!-- Nucleo Icons -->
+  <link href="../assets/css/nucleo-icons.css" rel="stylesheet" />
+  <!-- CSS Files -->
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="../assets/demo/demo.css" rel="stylesheet" />
+</head>
 
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
-
-    <!-- <script async defer src="https://buttons.github.io/buttons.js"></script> -->
-  </head>
-  <body class="h-100">
-    
-
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Main Sidebar -->
-        @include('partials.sidebar')
-        <!-- End Main Sidebar -->
-
-        <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
-          <div class="main-navbar sticky-top bg-white">
-            <!-- Main Navbar -->
-            @include('partials.navbar')
-          </div>
-          <!-- / .main-navbar -->
-          <div class="main-content-container container-fluid px-4">
-            <!-- Page Header -->
-            <div class="page-header row no-gutters py-4">
-              <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-                <span class="text-uppercase page-subtitle">Pantalla Principal</span>
-                <h3 class="page-title">Bienvenido</h3>
-              </div>
-            </div>
-            <!-- End Page Header -->
-            <div class="card-header border-bottom">
-                    <h6 class="m-0">Alumnos</h6>
-
+<body class=" ">
+  <div class="wrapper ">
+    @include('partials.sidebar')
+    <div class="main-panel">
+      <!-- Navbar -->
+      @include('partials.navbar')
+      <!-- End Navbar -->
+      <div class="content">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-chart">
+              <div class="card-header ">
+                  <div class="row">
+                    <div class="col-sm-6 text-left">
+                      <h5 class="card-category">Inicio</h5>
+                      <h2 class="card-title">Bienvenido</h2>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                        <label class="btn btn-sm btn-success btn-simple active" id="0">
+                          <input type="radio" name="options" autocomplete="off" checked=""> Escuchar
+                        </label>
+                        <label class="btn btn-sm btn-info btn-simple" id="1">
+                          <input type="radio" name="options" autocomplete="off"> Descargar
+                        </label>
+                        <label class="btn btn-sm btn-primary btn-simple" id="2">
+                          <input type="radio" name="options" autocomplete="off"> Instagram
+                        </label>
+                      </div>
+                    </div>
                   </div>
-            <div class="card-body p-0 pb-3 text-center">
-                    <table class="table mb-0">
-                      <thead class="bg-light">
-                        <tr>
-                          <th scope="col" class="border-0">#</th>
-                          <th scope="col" class="border-0">Nombre</th>
-                          <th scope="col" class="border-0">Edad</th>
-                          <th scope="col" class="border-0">Telefono</th>
-                          <th scope="col" class="border-0">Curso</th>
-                          <th scope="col" class="border-0">Acciones</th>
-                          <th scope="col" class="border-0">Eliminar</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                       
-                      </tbody>
-                    </table>
+                </div>
+                <div class="card-body">
+                    
+                </div>
+            </div>
+
+            <div class="card card-chart">
+              <div class="card-header ">
+                  <div class="row">
+                    <div class="col-sm-6 text-left">
+                      <img class="avatar" src="https://t1.kn3.net/taringa/E/1/B/A/3/7/LeandroCenteno/B51.jpg" alt="..." ><h3 class="card-title">El Villano - Morena</h3>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="btn-group btn-group-toggle float-right" data-toggle="buttons">
+                        <label class="btn btn-sm btn-success btn-simple" id="0">
+                          <input type="radio" name="options" autocomplete="off" checked=""> Escuchar
+                        </label>
+                        <label class="btn btn-sm btn-info btn-simple" id="1">
+                          <input type="radio" name="options" autocomplete="off"> Descargar
+                        </label>
+                        <label class="btn btn-sm btn-primary btn-simple" id="2">
+                          <input type="radio" name="options" autocomplete="off"> Instagram
+                        </label>
+                      </div>
+                      <a href="" class="fas fa-download btn btn-info" type="radio" name="options" autocomplete="off"></a>
+                      <a href="" class="fas fa-play-circle btn btn-success" type="radio" name="options" autocomplete="off"></a>
+                      <a href="" class="fas fa-trash-alt btn btn-danger" type="radio" name="options" autocomplete="off"></a>
+                      <a href="" class="fab fa-instagram btn btn-primary" type="radio" name="options" autocomplete="off"></a>
+                    </div>
                   </div>
-            <div class="row">
-              
-              
-              
-              
+                </div>
+                <div class="card-body">
+                    
+                </div>
             </div>
           </div>
-         @include('partials.footer')
-        </main>
+        </div>
       </div>
     </div>
-    <script src="{{asset('js/main.js')}}"></script>
-  </body>
+        
+      </div>
+      <!-- footer -->
+      @include('partials.footer')
+      <!-- endfooter -->
+      
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Google Maps Plugin    -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+    <!-- Chart JS -->
+    <script src="../assets/js/plugins/chartjs.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../assets/js/plugins/bootstrap-notify.js"></script>
+    <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
+    <script src="../assets/js/black-dashboard.min.js?v=1.0.0" type="text/javascript"></script>
+    <!-- Black Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../assets/demo/demo.js"></script>
+ 
+    <script>
+      $(document).ready(function() {
+        // Javascript method's body can be found in assets/js/demos.js
+        demo.initDashboardPageCharts();
+
+      });
+    </script>
+</body>
+
 </html>

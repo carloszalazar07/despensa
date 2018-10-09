@@ -64,6 +64,11 @@
     <script src="../assets/js/black-dashboard.min.js?v=1.0.0" type="text/javascript"></script>
     <!-- Black Dashboard DEMO methods, don't include it in your project! -->
     <script src="../assets/demo/demo.js"></script>
+    <script src="{{asset('bower_components/riot/riot.min.js')}}"></script>
+    <script src="{{asset('bower_components/riot/riot+compiler.min.js')}}"></script>
+
+    @yield('bottom')
+    
  
     <script>
       $(document).ready(function() {

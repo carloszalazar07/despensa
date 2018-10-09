@@ -14,10 +14,36 @@ class ProductosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $productos = Producto::orderBy('created_at','asc')->paginate(4);
+        // $productos = Producto::orderBy('created_at')->get();
+        // $nombre = $request->nombre->get('nombre');
+		$productos = Producto::orderBy('created_at','asc')->paginate(4);
+		return view('productos.index',compact('productos'));
+    }
+
+    public function buscar (Request $request){
+        $productos = Producto::where('nombre','like','%'.$request->busqueda.'%')->get();
         return view('productos.index',compact('productos'));
+
+    }
+
+    public function suma(Request $request){
+
+    	$agregandoId = ([6,2,5]);
+
+    	$producto = Producto::find($agregandoId);
+
+    	$totalCost = $producto->sum('precio_publico');
+    	return view('productos.mostrar',compact('totalCost'));
+    	// $producto = Producto::all();
+
+    	// return $totalCost = DB::table('productos')->sum('precio_publico');
+
+    	// return view::make('productos.mostrar',array('totalCost' => $totalCost));
+    	
+    	// $producto->precio_publico = $request->precio_publico;
+
     }
 
     /**
