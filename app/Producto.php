@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Producto extends Model
 {
-    protected $fillable= ['nombre','precio_publico','precio_costo','categoria_id'];
+    protected $fillable= ['nombre','precio_publico','precio_costo','categoria_id','marca_id'];
 
     public function categoria(){
     	return $this->belongsTo('App\Categoria');
@@ -16,9 +16,12 @@ class Producto extends Model
     	return $this->belongsTo('App\Marca');
     }
 
-    public function scopeNombre($query, $nombre){
-    	if ($nombre) {
-    		return $query->where('nombre','LIKE', "%".$nombre."%");
-    	}
+    public function factura () {
+        return $this->belongsToMany('App\Factura','detalle');
     }
+
+    public function reprecentante () {
+        return $this->belongsToMany('App\Reprecentante','producto_reprecentante');
+    }
+
 }

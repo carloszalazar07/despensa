@@ -16,9 +16,7 @@ class ProductosController extends Controller
      */
     public function index(Request $request)
     {
-        // $productos = Producto::orderBy('created_at')->get();
-        // $nombre = $request->nombre->get('nombre');
-		$productos = Producto::orderBy('created_at','asc')->paginate(4);
+		$productos = Producto::orderBy('nombre','asc')->paginate(4);
 		return view('productos.index',compact('productos'));
     }
 

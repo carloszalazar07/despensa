@@ -1,49 +1,67 @@
-@extends('index')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="{{'/assets/css/bootstrap.min.css'}}" rel="stylesheet" />
+	<link href="{{'/assets/css/black-dashboard.css'}}" rel="stylesheet" />
+	<link href="{{'/assets/demo/demo.css'}}" rel="stylesheet" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+</head>
 
-@section('contenido')
+	<div class="form-group">
+		<label for="" class="text-info">Producto</label>
+			<select name="" id="idInsumo">
+    			@foreach($productos as $producto)
+      				<option value="{{$producto->id}}">{{$producto->nombre}}</option>
+  				@endforeach
+    		</select>
+  	</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  	<div class="form-group">
+    	<label for="" class="text-info">Cantidad</label>
+    	<input type="text" id="Cantidad" placeholder="Cantidad" class="form-control" />
+  	</div>
+  	
+  	<div class="form-group">
+    	<label for="" class="text-info">Precio</label>
+    	<input type="text" id="Precio_Compra" placeholder="Precio de Compra" class="form-control" value="" />
+  	</div>
+  	
+  	<button onclick="agregar()" type="button" class="btn btn-info btn-sm">Agregar fila</button>
 
-  <div class="form-group">
-    <label for="" class="text-info">Producto</label>
-    <input type="text" id="idInsumo" placeholder="Producto" class="form-control" />
-    {{-- @foreach($productos as $producto) --}}
-    {{-- <select name="" id="idInsumo">
-      <option value="{{$producto->id}}">{{$producto->nombre}}</option>
-    </select> --}}
-  {{-- @endforeach --}}
-  </div>
-  <div class="form-group">
-    <label for="" class="text-info">Cantidad</label>
-    <input type="text" id="Cantidad" placeholder="Cantidad" class="form-control" />
-  </div>
-  <div class="form-group">
-    <label for="" class="text-info">Precio</label>
-    <input type="text" id="Precio_Compra" placeholder="Precio de Compra" class="form-control" value="" />
-  </div>
-  <button onclick="agregar()" type="button" class="btn btn-info btn-sm">Agregar fila</button>
+	<table id="tablaDatos" class="table table-bordered">
 
-<hr/>
+  		<thead>
+    		<tr>
+      			<td class="text-success">Numero del Insumo</td>
+      			<td class="text-success">Insumo</td>
+      			<td class="text-success">Cantidad</td>
+      			<td class="text-success">Subtotal</td>
+    		</tr>
+  		</thead>
 
-<table id="tablaDatos" class="table table-bordered">
-  <thead>
-    <tr>
-      <td class="text-success">Numero del Insumo</td>
-      <td class="text-success">Insumo</td>
-      <td class="text-success">Cantidad</td>
-      <td class="text-success">Subtotal</td>
-    </tr>
-  </thead>
-  <tbody id="tbodydatos"></tbody>
-  <tfoot>
-    <tr>
-      <td colspan="3"></td>
-      <td><input type="text" id="total" disabled /></td>
-    </tr>
-  </tfoot>
-</table>
+  		<tbody id="tbodydatos"></tbody>
+  
+	  	<tfoot>
+	    	<tr>
+	      		<td colspan="3"></td>
+	      		<td><h4><input type="text" id="total" disabled class="form-control text-success"  /></h4></td>
+	    	</tr>
+	  	</tfoot>
+	
+	</table>
 
-  <script>
+	<script src="{{'/js/jquery-3.3.1.min.js'}}"></script>
+	<script src="{{'/assets/js/core/popper.min.js'}}"></script>
+	<script src="{{'/assets/js/core/bootstrap.min.js'}}"></script>
+	<script src="{{'/assets/js/plugins/perfect-scrollbar.jquery.min.js'}}"></script>
+	<script src="{{'/assets/demo/demo.js'}}"></script>
+	<script src="{{'/assets/js/plugins/chartjs.min.js'}}"></script>
+	<script src="{{'/assets/js/plugins/bootstrap-notify.js'}}"></script>
+	{{-- <script src="{{'/assets/js/black-dashboard.min.js?v=1.0.0'}}" type="text/javascript"></script> --}}
+
+	  <script>
     var cont = 0;
 	var total = 0;
 
@@ -108,5 +126,7 @@
 	function reordenar() {
 	}
   </script>
-
-@endsection
+<body>
+	
+</body>
+</html>

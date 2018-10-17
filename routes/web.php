@@ -19,12 +19,15 @@ Route::view('/','index');
 Route::view('/index','index');
 Route::resource('categorias','CategoriasController');
 Route::resource('productos','ProductosController');
-Route::resource('vendedores','VendedoresController');
+Route::resource('reprecentantes','ReprecentantesController');
 Route::resource('marcas','MarcasController');
 Route::resource('facturas', 'FacturasController');
 
-Route::post('buscar','ProductosController@buscar')->name('productos.buscar');
+// Route::post('buscar','ProductosController@buscar')->name('productos.buscar');
 Route::get('/mostrar','ProductosController@suma')->name('productos.suma');
+Route::get('factura/{id}','FacturasController@mostrarProducto');
+Route::post('buscar','FacturasController@buscar')->name('facturas.buscar');
+
 
 
 // Route::get('/','SearchController@index');

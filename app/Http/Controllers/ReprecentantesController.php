@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Vendedore;
-use App\Marca;
+use App\Reprecentante;
+use App\Producto;
 
-class VendedoresController extends Controller
+class ReprecentantesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class VendedoresController extends Controller
      */
     public function index()
     {
-        $vendedores = Vendedore::orderBy('created_at','asc')->paginate(5);
-        return view('vendedores.index',compact('vendedores'));
+        $reprecentantes = Reprecentante::orderBy('created_at','asc')->paginate(5);
+        return view('reprecentantes.index',compact('reprecentantes'));
     }
 
     /**
@@ -26,8 +26,8 @@ class VendedoresController extends Controller
      */
     public function create()
     {
-        $vendedore = Vendedore::all();
-        return view('vendedores.create',compact('vendedore'));
+        $reprecentante = Reprecentante::all();
+        return view('reprecentantes.create',compact('reprecentante'));
     }
 
     /**
@@ -38,11 +38,11 @@ class VendedoresController extends Controller
      */
     public function store(Request $request)
     {
-        $vendedore = new Vendedore;
-        $vendedore->nombre = $request->nombre;
-        $vendedore->dia = $request->dia;
-        $vendedore->save();
-        return redirect('/vendedores'); 
+        $reprecentante = new Reprecentante;
+        $reprecentante->nombre = $request->nombre;
+        $reprecentante->dia = $request->dia;
+        $reprecentante->save();
+        return redirect('/reprecentantes'); 
     }
 
     /**
@@ -64,8 +64,8 @@ class VendedoresController extends Controller
      */
     public function edit($id)
     {
-        $vendedore = Vendedore::find($id);
-        return view('vendedores.edit',compact('vendedore'));
+        $reprecentante = Reprecentante::find($id);
+        return view('reprecentantes.edit',compact('reprecentante'));
     }
 
     /**
@@ -77,12 +77,12 @@ class VendedoresController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $vendedore = Vendedore::find($id);
-        $vendedore->nombre = $request->nombre;
-        $vendedore->dia = $request->dia;
-        $vendedore->save();
+        $reprecentante = Reprecentante::find($id);
+        $reprecentante->nombre = $request->nombre;
+        $reprecentante->dia = $request->dia;
+        $reprecentante->save();
 
-        return redirect('/vendedores');
+        return redirect('/reprecentantes');
     }
 
     /**
@@ -93,7 +93,7 @@ class VendedoresController extends Controller
      */
     public function destroy($id)
     {
-        $vendedore = Vendedore::find($id)->delete();
-        return redirect('/vendedores');
+        $reprecentante = Reprecentante::find($id)->delete();
+        return redirect('/reprecentantes');
     }
 }

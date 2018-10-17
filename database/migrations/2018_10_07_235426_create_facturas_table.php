@@ -13,22 +13,11 @@ class CreateFacturasTable extends Migration
      */
     public function up()
     {
-        Schema::create('clientes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nomnre');
-            $table->string('ruc');
-            $table->string('direccion');
-            $table->timestamps();
-        });
-
         Schema::create('facturas', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('cliente_id');
-            $table->decimal('iva', 10,2);
             $table->decimal('subtotal', 10,2);
             $table->decimal('total', 10,2);
             $table->timestamps();
-            $table->foreign('cliente_id')->references('id')->on('clientes');
         });
     }
 

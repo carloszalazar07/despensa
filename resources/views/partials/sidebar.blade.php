@@ -23,7 +23,7 @@
             </a>
           </li>
           <li>
-            <a href="{{route('vendedores.index')}}">
+            <a href="{{route('reprecentantes.index')}}">
               <i class="fas fa-user"></i>
               <p>Vendedores</p>
             </a>

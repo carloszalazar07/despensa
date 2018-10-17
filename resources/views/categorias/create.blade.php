@@ -10,10 +10,12 @@
       {!!Form::open(['action'=> 'CategoriasController@store',
                   'method'=> 'POST']) !!}
     
-    <div class="col-md-12">
-      <div class="form-group">
-        {{Form::label('nombre','Nombre')}}
-        {{Form::text('nombre','',(['class'=>'form-control','placeholder'=>'Ingrese su Nombre']))}}
+    <div class="text-center">
+      <div class="col-md-12">
+        <div class="form-group">
+          {{Form::label('nombre','Nombre')}}
+          {{Form::text('nombre','',(['class'=>'form-control text-center ','placeholder'=>'Ingrese su Nombre']))}}
+        </div>
       </div>
     </div>
     

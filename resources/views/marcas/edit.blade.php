@@ -12,11 +12,6 @@
             {{Form::text('nombre',$marca->nombre,(['class'=>'form-control']))}}
           </div>
         
-          <div class="form-group">
-            {{Form::label('vendedor_id','Vendedor')}}
-            {{Form::text('vendedor_id',$marca->vendedor_id,(['class'=>'form-control','READONLY']))}}
-          </div>
-        
         <br>
           {{Form::hidden('_method','PUT')}}
           <div class="text-center">

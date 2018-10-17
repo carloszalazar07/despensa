@@ -6,8 +6,8 @@
         <div class="card-header ">
           <div class="row">
             <div class="col-sm-6 text-left">
-              <h5 class="card-category">Pagína de Vendedores</h5>
-              <h2 class="card-title">Bienvenido</h2><a href="{{url('vendedores/create')}}" class="btn btn-info fas fa-plus-circle"></a>
+              <h5 class="card-category">Pagína de reprecentantes</h5>
+              <h2 class="card-title">Bienvenido</h2><a href="{{url('reprecentantes/create')}}" class="btn btn-info fas fa-plus-circle"></a>
               
             </div>
             
@@ -25,15 +25,15 @@
                 </tr>
               </thead>
               <tbody>
-                @foreach($vendedores as $vendedore)
+                @foreach($reprecentantes as $repre)
                 <tr>
-                  <td>{{$vendedore->nombre}}</td>
-                  <td>{{$vendedore->dia}}</td>
+                  <td>{{$repre->nombre}}</td>
+                  <td>{{$repre->dia}}</td>
                   <td class="text-center">
-                    <a href="{{route('vendedores.edit',$vendedore->id)}}" class="btn btn-info fas fa-edit"></a>
+                    <a href="{{route('reprecentantes.edit',$repre->id)}}" class="btn btn-info fas fa-edit"></a>
                   </td>
                   <td class="text-center">
-                    {!!Form::open(['route'=>['vendedores.destroy',$vendedore->id],'method'=>'DELETE'])!!}
+                    {!!Form::open(['route'=>['reprecentantes.destroy',$repre->id],'method'=>'DELETE'])!!}
                         <button class="btn btn-danger fas fa-trash-alt"></button>
                       {!!Form::close()!!}
                   </td>

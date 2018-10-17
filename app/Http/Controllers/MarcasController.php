@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Marca;
-use App\Vendedore;
 
 class MarcasController extends Controller
 {
@@ -15,7 +14,7 @@ class MarcasController extends Controller
      */
     public function index()
     {
-        $marcas = Marca::all();
+        $marcas = Marca::orderBy('nombre','asc')->paginate(4);
         return view('marcas.index',compact('marcas')); 
     }
 
@@ -26,8 +25,8 @@ class MarcasController extends Controller
      */
     public function create()
     {
-        $vendedores = Vendedore::all();
-        return view('marcas.create',compact('vendedores'));
+        $marca = Marca::all();
+        return view('marcas.create',compact('marca'));
     }
 
     /**
@@ -40,7 +39,6 @@ class MarcasController extends Controller
     {
         $marca = new Marca;
         $marca->nombre = $request->nombre;
-        $marca->vendedor_id = $request->vendedor_id;
         $marca->save();
 
         return redirect('/marcas');
@@ -80,7 +78,6 @@ class MarcasController extends Controller
     {
         $marca = Marca::find($id);
         $marca->nombre = $request->nombre;
-        $marca->vendedor_id = $request->vendedor_id;
         $marca->save();
 
         return redirect('/marcas');
