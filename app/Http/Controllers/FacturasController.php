@@ -10,8 +10,14 @@ class FacturasController extends Controller
 {
 	public function index () 
 	{
+		$facturas = Factura::all();
+		return view('facturas.index',compact('facturas'));
+	}
+
+	public function create ()
+	{
 		$productos = Producto::all();
-		return view('facturas.index',compact('productos'));
+		return view('facturas.create',compact('productos'));
 	}
 
 	public function mostrarProducto (Request $request, $id) 

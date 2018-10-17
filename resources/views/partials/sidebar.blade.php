@@ -34,13 +34,21 @@
               <p>Marcas</p>
             </a>
           </li>
-          {{-- <li>
+          <li>
+            <a href="{{route('facturas.index')}}">
+              <i class="fas fa-file-invoice-dollar"></i>
+              {{-- <i class="fas fa-file-invoice"></i>
+              <i class="fas fa-receipt"></i> --}}
+              <p>Facturas</p>
+            </a>
+          </li>
+          <li>
             <a href="./user.html">
               <i class="tim-icons icon-single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li>
+          {{-- <li>
             <a href="./tables.html">
               <i class="tim-icons icon-puzzle-10"></i>
               <p>Table List</p>

@@ -3,9 +3,9 @@
 @section('contenido')
 
 <style>
-  select { color:#344675; }
-  option { color:#ffffff; background-color:#344675; }
-  option:hover { color:#344675; background-color:#ffffff; }
+  select { color:#27293d; }
+  option { color:#ffffff; background-color:#27293d; }
+  option:hover { color:#27293d; background-color:#ffffff; }
 </style>
 
   <div class="card">
