@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Producto;
 use App\Factura;
+use DB; 
 
 class FacturasController extends Controller
 {
@@ -19,6 +20,46 @@ class FacturasController extends Controller
 		$productos = Producto::all();
 		return view('facturas.create',compact('productos'));
 	}
+
+	public function store (Request $request)
+	{
+		$agregandoId = $request->producto_id;
+
+		$cantidad = $request->cantidad;
+	 	$precio_publico = $request->precio_publico;
+
+		$operacion = $cantidad * $precio_publico;
+    	return view('facturas.suma',compact('operacion'));
+	}
+
+	public function crear () 
+	{
+		$productos = Producto::all();
+		return view('facturas.crear', compact('productos'));
+	}
+
+	public function guardar(Request $request, $id) 
+	{
+		$ultimoProducto = $request->producto->id;
+		$producto= Producto::find($ultimoProducto);
+		$cantidad = $request->cantidad;
+		$resultado = 0;
+
+		$operacion = $cantidad * $precio_publico = $resultado; 
+
+	}
+
+	public function suma(Request $request){
+
+		$agregandoId = $request->producto_id;
+
+		$cantidad = $request->cantidad;
+		$precio_publico = $request->precio_publico;
+
+		$operacion = $cantidad * $precio_publico;
+    	return view('facturas.suma',compact('operacion'));
+
+    }
 
 	public function mostrarProducto (Request $request, $id) 
 	{

@@ -48,7 +48,7 @@
               <div class="col-md-4 pr-md-1">
                 <div class="form-group">
                   <label for="" class="text-info">Precio</label>
-                  <input type="text" id="Precio_Compra" placeholder="Precio de Compra" class="form-control" value="" >
+                  <input type="text" id="Precio_Compra" placeholder="Precio de Compra" class="form-control" value="{{$producto->precio_publico}}" >
                 </div>
               </div>
             </div>
@@ -83,57 +83,6 @@
       </div>
   </div>
 
-  {{-- <div class="form-group">
-    <label for="" class="text-info">Producto</label>
-      <select name="" id="idInsumo">
-          @foreach($productos as $producto)
-              <option value="{{$producto->id}}">{{$producto->nombre}}</option>
-          @endforeach
-        </select>
-    </div>
-
-    <div class="form-group">
-      <label for="" class="text-info">Cantidad</label>
-      <input type="text" id="Cantidad" placeholder="Cantidad" class="form-control" />
-    </div>
-    
-    <div class="form-group">
-      <label for="" class="text-info">Precio</label>
-      <input type="text" id="Precio_Compra" placeholder="Precio de Compra" class="form-control" value="" />
-    </div>
-    
-    <button onclick="agregar()" type="button" class="btn btn-info btn-sm">Agregar fila</button>
-
-  <table id="tablaDatos" class="table table-bordered">
-
-      <thead>
-        <tr>
-            <td class="text-success">Numero del Insumo</td>
-            <td class="text-success">Insumo</td>
-            <td class="text-success">Cantidad</td>
-            <td class="text-success">Subtotal</td>
-        </tr>
-      </thead>
-
-      <tbody id="tbodydatos"></tbody>
-  
-      <tfoot>
-        <tr>
-            <td colspan="3"></td>
-            <td><h4><input type="text" id="total" disabled class="form-control text-success"  /></h4></td>
-        </tr>
-      </tfoot>
-  
-  </table> --}}
-
-  {{-- <script src="{{'/js/jquery-3.3.1.min.js'}}"></script>
-  <script src="{{'/assets/js/core/popper.min.js'}}"></script>
-  <script src="{{'/assets/js/core/bootstrap.min.js'}}"></script>
-  <script src="{{'/assets/js/plugins/perfect-scrollbar.jquery.min.js'}}"></script>
-  <script src="{{'/assets/demo/demo.js'}}"></script>
-  <script src="{{'/assets/js/plugins/chartjs.min.js'}}"></script>
-  <script src="{{'/assets/js/plugins/bootstrap-notify.js'}}"></script> --}}
-  {{-- <script src="{{'/assets/js/black-dashboard.min.js?v=1.0.0'}}" type="text/javascript"></script> --}}
 
     <script>
     var cont = 0;

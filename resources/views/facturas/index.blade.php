@@ -10,6 +10,7 @@
               <h5 class="card-category">Pagína de Productos</h5>
               <h2 class="card-title">Bienvenido</h2>
               <a href="{{url('facturas/create')}}" class="btn btn-info fas fa-plus-circle "></a>
+              <a href="{{route('facturas.crear')}}" class="btn btn-primary fas fa-plus-circle "></a>
             </div>
 
           </div>

@@ -11,8 +11,9 @@
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
-  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
   <link href="{{'/assets/css/nucleo-icons.css'}}" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   <link href="{{'/assets/css/bootstrap.min.css'}}" rel="stylesheet" />
   <link href="{{'/assets/css/black-dashboard.css'}}" rel="stylesheet" />
   <link href="{{'/assets/demo/demo.css'}}" rel="stylesheet" />
@@ -55,17 +56,9 @@
     <script src="{{'/assets/js/plugins/bootstrap-notify.js'}}"></script>
     <script src="../assets/js/black-dashboard.min.js?v=1.0.0" type="text/javascript"></script>
     <script src="{{'/assets/demo/demo.js'}}"></script>
-
-    @yield('bottom')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     
- 
-    <script>
-      $(document).ready(function() {
-        // Javascript method's body can be found in assets/js/demos.js
-        demo.initDashboardPageCharts();
 
-      });
-    </script>
 </body>
 
 </html>

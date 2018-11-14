@@ -28,6 +28,13 @@ Route::get('/mostrar','ProductosController@suma')->name('productos.suma');
 Route::get('factura/{id}','FacturasController@mostrarProducto');
 Route::post('buscar','FacturasController@buscar')->name('facturas.buscar');
 
+// Route::get('/crear','FacturasController@crear')->name('facturas.crear');
+Route::get('crear','FacturasController@crear')->name('facturas.crear');
+Route::get('guardar','FacturasController@guardar')->name('facturas.guardar');
+Route::get('suma','FacturasController@suma')->name('facturas.suma');
+
+
+
 
 
 // Route::get('/','SearchController@index');

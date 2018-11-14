@@ -27,7 +27,8 @@ class ReprecentantesController extends Controller
     public function create()
     {
         $reprecentante = Reprecentante::all();
-        return view('reprecentantes.create',compact('reprecentante'));
+        $productos = Producto::all();
+        return view('reprecentantes.create',compact('reprecentante','productos'));
     }
 
     /**
@@ -38,10 +39,19 @@ class ReprecentantesController extends Controller
      */
     public function store(Request $request)
     {
+        $ultimoProducto = $request->producto_id;
+        $ultimoReprecentante = Reprecentante::all();
+        var_dump($ultimoReprecentante->last());
+
+        $reprecentante = Reprecentante::find($ultimoReprecentante);
+        $producto = Producto::find($ultimoProducto);
+
         $reprecentante = new Reprecentante;
         $reprecentante->nombre = $request->nombre;
         $reprecentante->dia = $request->dia;
+
         $reprecentante->save();
+        $reprecentante->producto()->attach($ultimoProducto);
         return redirect('/reprecentantes'); 
     }
 
@@ -65,7 +75,8 @@ class ReprecentantesController extends Controller
     public function edit($id)
     {
         $reprecentante = Reprecentante::find($id);
-        return view('reprecentantes.edit',compact('reprecentante'));
+        $productos= Producto::all();
+        return view('reprecentantes.edit',compact('reprecentante','productos'));
     }
 
     /**
@@ -91,9 +102,16 @@ class ReprecentantesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        $reprecentante = Reprecentante::find($id)->delete();
+        $ultimoProducto = $request->producto_id;
+
+        $reprecentante = Reprecentante::find($id);
+        $producto = Producto::find($ultimoProducto);
+        
+        $reprecentante->producto()->detach($producto);
+        $reprecentante->delete();
+
         return redirect('/reprecentantes');
     }
 }
